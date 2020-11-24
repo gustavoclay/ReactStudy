@@ -10,7 +10,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      notas: []
+      notas: [],
+      categorias: []
     };
   }
 
@@ -29,6 +30,15 @@ class App extends Component {
     this.setState({ notas: arrayNotas });
   }
 
+  adicionarCategoria(categoria) {
+    const novoArrayCategorias = [...this.state.categorias, categoria];
+    const novoEstado = {
+      ...this.state,
+      categorias: novoArrayCategorias
+    };
+    this.setState(novoEstado);
+  }
+
   render() {
     return (
       <section className="conteudo">
@@ -36,7 +46,10 @@ class App extends Component {
           criarNota={this.criarNota.bind(this)}
         />
         <main className="conteudo-principal">
-          <ListaCategorias />
+          <ListaCategorias
+            categorias={this.state.categorias}
+            adicionarCategoria={this.adicionarCategoria.bind(this)}
+          />
           <ListaNotas
             notas={this.state.notas}
             deletarNota={this.deletarNota.bind(this)}

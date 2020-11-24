@@ -6,6 +6,7 @@ class CardNota extends Component {
     const indice = this.props.indice;
     this.props.deletarNota(indice);
   }
+
   render() {
     return (
       <section className="card-nota">
