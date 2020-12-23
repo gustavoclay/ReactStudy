@@ -15,6 +15,7 @@ class CardNota extends Component {
           <i onClick={this.deletarNota.bind(this)} className="material-icons">
             delete
           </i>
+          <h4>{this.props.categoria}</h4>
         </header>
         <p className="card-nota_texto">{this.props.texto}</p>
       </section>
