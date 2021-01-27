@@ -4,56 +4,32 @@ import './assets/index.css';
 import CadastroForm from './components/CadastroForm';
 import ListaCategorias from './components/ListaCategorias/ListaCategorias';
 import ListaNotas from "./components/ListaNotas";
+import Categorias from './models/Categorias';
+import Notas from './models/Notas';
 
 class App extends Component {
 
   constructor() {
     super();
-    this.state = {
-      notas: [],
-      categorias: []
-    };
-  }
-
-  criarNota(titulo, texto, categoria) {
-    const novaNota = { titulo, texto, categoria };
-    const novoArrayNotas = [...this.state.notas, novaNota];
-    const novoEstado = {
-      notas: novoArrayNotas
-    };
-    this.setState(novoEstado);
-  }
-
-  deletarNota(index) {
-    let arrayNotas = this.state.notas;
-    arrayNotas.splice(index, 1);
-    this.setState({ notas: arrayNotas });
-  }
-
-  adicionarCategoria(categoria) {
-    const novoArrayCategorias = [...this.state.categorias, categoria];
-    const novoEstado = {
-      ...this.state,
-      categorias: novoArrayCategorias
-    };
-    this.setState(novoEstado);
+    this.categorias = new Categorias();
+    this.notas = new Notas();
   }
 
   render() {
     return (
       <section className="conteudo">
         <CadastroForm
-          categorias={this.state.categorias}
-          criarNota={this.criarNota.bind(this)}
+          categorias={this.categorias.categorias}
+          criarNota={this.notas.adicionarNota}
         />
         <main className="conteudo-principal">
           <ListaCategorias
-            categorias={this.state.categorias}
-            adicionarCategoria={this.adicionarCategoria.bind(this)}
+            categorias={this.categorias.categorias}
+            adicionarCategoria={this.categorias.adicionarCategoria}
           />
           <ListaNotas
-            notas={this.state.notas}
-            deletarNota={this.deletarNota.bind(this)}
+            notas={this.notas.notas}
+            deletarNota={this.notas.deletarNota}
           />
         </main>
       </section>
