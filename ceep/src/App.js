@@ -19,17 +19,17 @@ class App extends Component {
     return (
       <section className="conteudo">
         <CadastroForm
-          categorias={this.categorias.categorias}
-          criarNota={this.notas.adicionarNota}
+          categorias={this.categorias}
+          criarNota={this.notas.adicionarNota.bind(this.notas)}
         />
         <main className="conteudo-principal">
           <ListaCategorias
-            categorias={this.categorias.categorias}
-            adicionarCategoria={this.categorias.adicionarCategoria}
+            categorias={this.categorias}
+            adicionarCategoria={this.categorias.adicionarCategoria.bind(this.categorias)}
           />
           <ListaNotas
-            notas={this.notas.notas}
-            deletarNota={this.notas.deletarNota}
+            notas={this.notas}
+            deletarNota={this.notas.apagarNota.bind(this.notas)}
           />
         </main>
       </section>
