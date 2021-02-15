@@ -1,11 +1,12 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import Botao from './src/components/Botao';
+import Contador from './src/components/Contador';
 
 
 export default () => (
   <SafeAreaView style={style.App}>
-    <Botao />
+    <Contador />
+    <Contador inicial={0} passo={10} />
   </SafeAreaView>
 )
 
