@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-export default (props) => {
-  const num = getRandomNumber(props.min, props.max);
+export default ({ min, max }) => {
+  const num = getRandomNumber(min, max);
   return <Text>Numero Aleatório: {num}</Text>
 }
 
-getRandomNumber(min, max) {
+function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
