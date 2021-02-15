@@ -1,11 +1,11 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import Titulo from "./src/components/Titulo";
+import Botao from './src/components/Botao';
 
 
 export default () => (
   <SafeAreaView style={style.App}>
-    <Titulo principal="Formulário" secundario="Cadastro de pessoas" />
+    <Botao />
   </SafeAreaView>
 )
 
