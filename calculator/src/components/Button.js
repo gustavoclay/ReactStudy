@@ -1,7 +1,6 @@
 import React from 'react'
 import { Dimensions, StyleSheet, Text, TouchableHighlight } from 'react-native'
 
-
 export default props => {
 
   return (
@@ -15,8 +14,8 @@ export default props => {
 const styles = StyleSheet.create({
   button: {
     fontSize: 40,
-    height: Dimensions.get('window') / 4,
-    width: Dimensions.get('window') / 4,
+    height: Dimensions.get("window").height / 4,
+    width: Dimensions.get("window").width / 4,
     padding: 20,
     backgroundColor: '#f0f0f0',
     textAlign: 'center',
