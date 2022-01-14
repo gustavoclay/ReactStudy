@@ -30,4 +30,7 @@ yarn-error.log*
 !.vscode/extensions.json
 *.code-workspace
 
+### EXPO ###
+.expo/*
+
 # End of https://www.toptal.com/developers/gitignore/api/vscode
